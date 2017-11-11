@@ -34,6 +34,7 @@ desc = [[
 ]]
 	
 print(desc)
+
 local function isempty(s)
 	return s == nil or s == ''
 end
@@ -133,7 +134,7 @@ local function main(args)
 	
 	print("")
 	print("BruteForcing Farpointe/Pyramid - Facility Code:"..facility..", CardNumber Start:"..baseid..", CardNumber End:"..endid..", TimeOut: "..timeout)
-	os.execute("timeout 5")
+	os.execute("sleep 5")
 	for cardnum = baseid,endid,fordirection do 
 		--print("Programming Farpointe/Pyramid - Facility Code: "..facility..", CardNumber: "..cardnum.."...")
 		core.console('lf pyramid sim '..facility..' '..cardnum..'')
@@ -141,7 +142,7 @@ local function main(args)
 			print("Press enter to continue ...")
 			io.read()
 		else
-			os.execute("timeout "..timeout.."")
+			os.execute("sleep "..timeout.."")
 		end
 	end
 	core.console('hw ping')
